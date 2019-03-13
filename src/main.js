@@ -1,3 +1,7 @@
+/*global google, WORLDBANK*/
+
+const data=WORLDBANK;
+
 function indexView(){
     document.getElementById('dinamicpage').innerHTML = '';
     document.getElementById('dinamicpage').innerHTML += 
@@ -17,69 +21,92 @@ function indexView(){
 
 }
 
+function getIndicator(indicatorCode,data){
+    let indicatorData=[];
+
+    //Genera un arreglo con los años
+    let years=Object.keys(data.BRA.indicators[0].data);
+
+    //forEach para recorrer los años de manera individual
+    years.forEach((year)=>{
+        //Obtener los indicadores para cada país
+        let dataPeru = window.data.filterData(data.PER.indicators,indicatorCode);
+        let dataBrazil= window.data.filterData(data.BRA.indicators, indicatorCode);
+        let dataMexico = window.data.filterData(data.MEX.indicators,indicatorCode);
+        let dataChile= window.data.filterData(data.CHL.indicators, indicatorCode);
+
+        indicatorData.push([year, parseFloat(dataPeru[0].data[year]), parseFloat(dataBrazil[0].data[year]),
+                                  parseFloat(dataMexico[0].data[year]), parseFloat(dataChile[0].data[year])]);
+    })
+
+    return indicatorData;
+} 
+
+/*Inicio implementación Google Chart*/
+google.charts.load('current', {'packages':['line']});
+//google.charts.setOnLoadCallback(drawChart);
+
+function drawChart(indicatorCode,data) {
+
+    let chartData = new google.visualization.DataTable();
+    chartData.addColumn('string', 'Year');
+    chartData.addColumn('number', 'Perú');
+    chartData.addColumn('number', 'Brasil');
+    chartData.addColumn('number', 'Mexico');
+    chartData.addColumn('number', 'Chile');
+
+    chartData.addRows(getIndicator(indicatorCode,data));
+
+    let options = {
+    chart: {
+        title: document.getElementById("indicatorcode").selectedOptions[0].text,
+    },
+        width: 900,
+        height: 500
+    };
+
+    let chart = new google.charts.Line(document.getElementById('searchresult'));
+
+    chart.draw(chartData, google.charts.Line.convertOptions(options));      
+} 
+/*Fin implementación Google Chart*/
+
+
 function searchView(){
+    let options = "";
+    
+    data.BRA.indicators.forEach((element)=>{
+        options +=`<option value="${element.indicatorCode}">${element.indicatorName}</option>`
+    })
+
     document.getElementById('dinamicpage').innerHTML = '';
     document.getElementById('dinamicpage').innerHTML += 
     `
     <section id="searchview" class="row"> 
         <section class="col s12 m12 l4" id="sectionfilter">
-            <select id="type" class="browser-default">
+            <select id="indicatorcode" class="browser-default">
                 <option value="option">Selecciona una opción</option>
-                <option value="SL.TLF.PART.FE.ZS">Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)</option>
-                <option value="SL.TLF.INTM.ZS">Fuerza laboral con educación intermedia (% del total)</option>
-                <option value="SL.TLF.INTM.MA.ZS">Fuerza laboral con educación intermedia, varones (% de la fuerza laboral masculina)</option>                            
-                <option value="SL.TLF.INTM.FE.ZS">Fuerza laboral con educación intermedia, mujeres (% de la fuerza laboral femenina)</option>
-                
+                ${options}                
             </select>        
         </section>           
         
-        <section id="worldbankresult" class="col s12 m12 l8" >      
+        <section id="indicatorsresult" class="col s12 m12 l8">      
             <h4 id="resulttitle">indicador</h4>         
             <figure id="searchresult" class="row">
             
             </figure>
         </section>
     </section>  
-    `
-    pokemonAll()
-    /*Materialize elemento Collapsible*/  
-    $('.collapsible').collapsible();
-  
-
-    /*Materialize elemento Select*/
-    $('select').formSelect();
-   
-  
+    `  
+    
+ 
     /*III. Filtrar*/
 
-    /*a) Filtro por tipo de pokemon*/
-    document.getElementById('type').addEventListener('change',()=>{
-        let condition =document.getElementById('type').value;
-        if(condition==='all'){
-            pokemonAll();
-        }else {
-            getPokemonData((data) => {
-                let result = window.data.filterData(data.pokemon, (element)=>{
-                    return element.type.includes(condition);
-                });
-                showPokemonList(result);
-            });
-        }
+    /*a) Filtro por indicador*/    
+    document.getElementById('indicatorcode').addEventListener('change',()=>{
+        let condition =document.getElementById('indicatorcode').value;
+        drawChart(condition, data);
     });
-    
-    
-    /*IV. Ordenar*/
-
-    /*a) Ordenar por nombre */
-    document.getElementById('namesort').addEventListener('change',()=>{
-        let sortOrder =document.getElementById('namesort').value;
-        getPokemonData((data)=>{
-            let result =window.data.sortData(data.pokemon,'name',sortOrder);
-            showPokemonList(result);
-        })
-        
-    });
-
     
 }
 
@@ -90,9 +117,8 @@ document.getElementsByTagName('a')[0].addEventListener('click', () => {
     indexView();
 })
 
-
-
-
 document.addEventListener('DOMContentLoaded', () =>{ 
     indexView(); 
 })
+
+
