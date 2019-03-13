@@ -58,11 +58,12 @@ function drawChart(indicatorCode,data) {
     chartData.addRows(getIndicator(indicatorCode,data));
 
     let options = {
-    chart: {
         title: document.getElementById("indicatorcode").selectedOptions[0].text,
-    },
-        width: 900,
-        height: 500
+        width: 750,
+        height: 500,
+        legend:{textStyle: {color: '#212F3C', fontSize: 18}},
+        fontSize:20,
+        colors: ['red','green', 'yellow', 'Blue']
     };
 
     let chart = new google.charts.Line(document.getElementById('searchresult'));
