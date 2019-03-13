@@ -33,7 +33,7 @@ function searchView(){
             </select>        
         </section>           
         
-        <section id="pokemonresult" class="col s12 m12 l8" >      
+        <section id="worldbankresult" class="col s12 m12 l8" >      
             <h4 id="resulttitle">indicador</h4>         
             <figure id="searchresult" class="row">
             
