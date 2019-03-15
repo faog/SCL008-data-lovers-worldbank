@@ -13,22 +13,23 @@ describe('data', () => {
   describe('data.filterData', () => {
 
     const dataFilter = [
-      {"PER": {
-        "indicators": [
-          {
-            "data": {
-              "1960": "",
-              "1961": "",
-          },
-            "countryName": "Perú",
-            "countryCode": "PER",
-            "indicatorName": "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)",
-            "indicatorCode": "SL.TLF.PART.FE.ZS"
-          }]        
-      
+        {"PER": {
+          "indicators": [
+            {
+              "data": {
+                "1960": "",
+                "1961": "",
+            },
+              "countryName": "Perú",
+              "countryCode": "PER",
+              "indicatorName": "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)",
+              "indicatorCode": "SL.TLF.PART.FE.ZS"
+            }]        
+        
+        }
       }
-    }
-  ]
+    ]
+  
     it('debería ser una función', () => {
       assert.equal(typeof window.data.filterData, 'function');
     });

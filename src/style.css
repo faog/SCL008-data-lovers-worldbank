@@ -40,7 +40,7 @@ nav{
 footer{
     background-color:rgba(27, 31, 119, 0.95);
     padding: 0px 100px;
-    height: 80px;  
+    height: 65px;  
 }
 
 footer p{
@@ -59,9 +59,8 @@ main #welcomeimage{
     background-size: cover;
     background-position:center;
     width: 100%;
-    height: 450px;
-    opacity: 0.8;  
-    background-image: url(Image/welcomeimage.jpg)
+    opacity: 0.9;  
+    
 }
 
 #welcomeimage h2{   
@@ -81,7 +80,24 @@ main #welcomeimage{
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 1);      
 }
 
-#btnstart{
+.carousel{
+    height: 90vh;
+}
+
+#onecarousel{
+    background-image: url(Image/carousel01.jpg)
+}
+
+#twocarousel{
+    background-image: url(Image/carousel02.jpg)
+}
+
+#threecarousel{
+    background-image: url(Image/carousel03.jpg)
+}
+
+
+.btnstart{
     width: 190px;
     height: 45px;
     margin: 30px 100px;
@@ -92,7 +108,7 @@ main #welcomeimage{
     cursor: pointer;
 }
 
-#btnstart:hover{
+.btnstart:hover{
     background: rgba(27, 31, 119);
     border: 1px solid rgba(27, 31, 119);     
     font-weight: bold;  

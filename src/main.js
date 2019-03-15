@@ -1,5 +1,4 @@
-/*global google, WORLDBANK*/
-
+/*global google, WORLDBANK, $*/
 const data=WORLDBANK;
 
 function indexView(){
@@ -7,18 +6,40 @@ function indexView(){
     document.getElementById('dinamicpage').innerHTML += 
     `
     <section id="welcomeimage">
-        <h2 class="center-align">titulo indicadores</h2>   
-        <div class="center-align"> 
-            <button id="btnstart">ver indicadores</button>
-        </div>     
-    </section>   
+    <!--Carrusel con contenido de materialize-->
+        <section class="carousel carousel-slider center">
+            <div id="onecarousel" class="carousel-item">
+                <h2>Indicadores 01</h2>
+                <p class="white-text">parrafo</p>
+                <button class="btnstart">ver indicadores</button>
+            </div>
+            <div id="twocarousel" class="carousel-item">
+                <h2>Indicadores 02</h2>
+                <p class="white-text">parrafo</p>
+                <button class="btnstart">ver indicadores</button>
+            </div>
+            <div id="threecarousel" class="carousel-item">
+                <h2>Indicadores 03</h2>
+                <p class="white-text">parrafo</p>
+                <button class="btnstart">ver indicadores</button>
+            </div>
+        </section> 
+    </section>       
 
     `
-    /*c) Página Busqueda Indicadores*/
-    document.getElementById('btnstart').addEventListener('click', () =>{
-    searchView(); 
-    })
-
+    /*JQuery carousel Materialize*/ 
+    $(document).ready(function(){
+        $('.carousel').carousel({            
+            indicators: true            
+        });
+    });
+    
+    /*Página Búsqueda Indicadores*/  
+    Array.from(document.getElementsByClassName('btnstart')).forEach(element=>{
+        element.addEventListener('click',() =>{
+            searchView()
+        })
+    })    
 }
 
 function getIndicator(indicatorCode,data){
@@ -82,6 +103,7 @@ function searchView(){
 
     document.getElementById('dinamicpage').innerHTML = '';
     document.getElementById('dinamicpage').innerHTML += 
+
     `
     <section id="searchview" class="row"> 
         <section class="col s12 m12 l4" id="sectionfilter">
@@ -108,6 +130,14 @@ function searchView(){
         let condition =document.getElementById('indicatorcode').value;
         drawChart(condition, data);
     });
+
+    /*a) Ordenar indicadores   
+    document.getElementById('indicatorcode').addEventListener('DOMContentLoaded',()=>{
+        let sortOrder =document.getElementById('indicatorcode').value;
+        let result = window.data.sortData(data, 'indicatorCode', sortOrder);   
+        searchView(result);
+
+    }); */ 
     
 }
 
