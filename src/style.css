@@ -116,19 +116,15 @@ main #welcomeimage{
 
 /*Pagina de búsqueda*/
 main #searchview{
-    padding-top:60px;
     color:#212F3C;  
+    padding: 200px 100px;
 }
 
-#sectionfilter{
-    padding-top:20px;
-    padding-left: 100px;    
-}
-
-#worldbankresult{
-    overflow-y: scroll;
-    height: 70vh;
+#worldbankresult{   
+    height: 60vh;
     padding: 0px 100px; 
 }
 
-
+#searchresult{
+    margin-top:50px;
+}

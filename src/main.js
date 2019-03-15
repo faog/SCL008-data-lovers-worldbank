@@ -80,7 +80,8 @@ function drawChart(indicatorCode,data) {
 
     let options = {
         title: document.getElementById("indicatorcode").selectedOptions[0].text,
-        width: 750,
+        curveType: 'function',        
+        width: '100%',
         height: 500,
         legend:{textStyle: {color: '#212F3C', fontSize: 18}},
         fontSize:20,
@@ -106,15 +107,14 @@ function searchView(){
 
     `
     <section id="searchview" class="row"> 
-        <section class="col s12 m12 l4" id="sectionfilter">
+        <section class="col s12 m12 l12" id="sectionfilter">
             <select id="indicatorcode" class="browser-default">
                 <option value="option">Selecciona una opción</option>
                 ${options}                
             </select>        
         </section>           
         
-        <section id="indicatorsresult" class="col s12 m12 l8">      
-            <h4 id="resulttitle">indicador</h4>         
+        <section id="indicatorsresult" class="col s12 m12 l12">  
             <figure id="searchresult" class="row">
             
             </figure>
