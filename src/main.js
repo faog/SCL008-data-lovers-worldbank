@@ -22,19 +22,25 @@ function indexView(){
     <!--Carrusel con contenido de materialize-->
         <section class="carousel carousel-slider center">
             <div id="onecarousel" class="carousel-item">
-                <h2>Índice de datos</h2>
-                <p class="white-text">Proporciona una lista de conjuntos de datos de disponible del Banco Mundial, incluyendo gráficos comparativos para cada uno de ellos.</p>
-                <button class="btnstart">Indicadores</button>
+                <div class="carouselcontent">
+                    <h2>Índice de datos</h2>
+                    <p class="white-text">Proporciona una lista de conjuntos de datos disponibles del Banco Mundial, incluyendo gráficos comparativos para cada uno de ellos.</p>
+                    <button class="btnstart">Indicadores</button>
+                </div>
             </div>
             <div id="twocarousel" class="carousel-item">
-                <h2>Índice de datos</h2>
-                <p class="white-text">Herramienta de análisis y visualización que contiene información de países latinoamericanos (Brasil, Chile, Mexico y Peru)</p>
-                <button class="btnstart">Indicadores</button>
+                <div class="carouselcontent">
+                    <h2>Índice de datos</h2>
+                    <p class="white-text">Herramienta de análisis y visualización que contiene información de países latinoamericanos (Brasil, Chile, Mexico y Peru)</p>
+                    <button class="btnstart">Indicadores</button>
+                </div>
             </div>
             <div id="threecarousel" class="carousel-item">
-                <h2>Índice de datos</h2>
-                <p class="white-text">Fácil acceso a información básica de 138 indicadores desde el año 1960 al 2017.</p>
-                <button class="btnstart">Indicadores</button>
+                <div class="carouselcontent">
+                    <h2>Índice de datos</h2>
+                    <p class="white-text">Fácil acceso a información básica de 138 indicadores desde el año 1960 al 2017.</p>
+                    <button class="btnstart">Indicadores</button>
+                </div>
             </div>
         </section> 
     </section>       
@@ -46,10 +52,7 @@ function indexView(){
         element.addEventListener('click',() =>{
             searchView()
         })
-    })   
-    
-
-
+    }) 
 }
 
 function getIndicator(indicatorCode,data){
@@ -80,7 +83,7 @@ google.charts.load('current', {'packages':['line']});
 function drawChart(indicatorCode,data) {
 
     let chartData = new google.visualization.DataTable();
-    chartData.addColumn('string', 'Year');
+    chartData.addColumn('string', 'Año');
     chartData.addColumn('number', 'Perú');
     chartData.addColumn('number', 'Brasil');
     chartData.addColumn('number', 'Mexico');
