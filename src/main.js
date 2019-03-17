@@ -1,14 +1,20 @@
 /*global google, WORLDBANK, $*/
 const data=WORLDBANK;
 
-$(document).ready(function(){
-    //Navbar
-    $('.sidenav').sidenav();       
-
-    indexView();
-});
-
 function indexView(){
+
+    /*JQuery elementos Materialize*/ 
+    $(document).ready(function(){
+        //Navbar
+        $('.sidenav').sidenav();
+
+        //carousel
+        $('.carousel').carousel({            
+            indicators: true            
+        });       
+
+    });
+
     document.getElementById('dinamicpage').innerHTML = '';
     document.getElementById('dinamicpage').innerHTML += 
     `
@@ -16,37 +22,34 @@ function indexView(){
     <!--Carrusel con contenido de materialize-->
         <section class="carousel carousel-slider center">
             <div id="onecarousel" class="carousel-item">
-                <h2>Indicadores 01</h2>
-                <p class="white-text">parrafo</p>
-                <button class="btnstart">ver indicadores</button>
+                <h2>Índice de datos</h2>
+                <p class="white-text">Proporciona una lista de conjuntos de datos de disponible del Banco Mundial, incluyendo gráficos comparativos para cada uno de ellos.</p>
+                <button class="btnstart">Indicadores</button>
             </div>
             <div id="twocarousel" class="carousel-item">
-                <h2>Indicadores 02</h2>
-                <p class="white-text">parrafo</p>
-                <button class="btnstart">ver indicadores</button>
+                <h2>Índice de datos</h2>
+                <p class="white-text">Herramienta de análisis y visualización que contiene información de países latinoamericanos (Brasil, Chile, Mexico y Peru)</p>
+                <button class="btnstart">Indicadores</button>
             </div>
             <div id="threecarousel" class="carousel-item">
-                <h2>Indicadores 03</h2>
-                <p class="white-text">parrafo</p>
-                <button class="btnstart">ver indicadores</button>
+                <h2>Índice de datos</h2>
+                <p class="white-text">Fácil acceso a información básica de 138 indicadores desde el año 1960 al 2017.</p>
+                <button class="btnstart">Indicadores</button>
             </div>
         </section> 
     </section>       
 
     `
-    /*JQuery carousel Materialize*/ 
-    $(document).ready(function(){
-        $('.carousel').carousel({            
-            indicators: true            
-        });
-    });
-    
-    /*Página Búsqueda Indicadores*/  
+    /*MANEJO DOM PÁGINA INICIO*/
+    /*Página Búsqueda Indicadores a partir del elemento button*/  
     Array.from(document.getElementsByClassName('btnstart')).forEach(element=>{
         element.addEventListener('click',() =>{
             searchView()
         })
-    })    
+    })   
+    
+
+
 }
 
 function getIndicator(indicatorCode,data){
@@ -145,14 +148,30 @@ function searchView(){
 }
 
 /*II.Manejo del DOM */
+/*a)Inicialización página de inicio*/
+document.addEventListener('DOMContentLoaded', () =>{ 
+    indexView(); 
+})
 
-/*a)Página de inicio*/
+/*a)Página de inicio a partir del logo*/
 document.getElementsByTagName('a')[0].addEventListener('click', () => {
     indexView();
 })
 
-document.addEventListener('DOMContentLoaded', () =>{ 
-    indexView(); 
+
+/*b)Página Búsqueda Indicadores a partir del elemento navbar*/
+Array.from(document.getElementsByClassName('indicatorshow')).forEach(element=>{
+    element.addEventListener('click',()=>{
+        searchView()
+    })
 })
+
+/*c)Página "Quienes somos" a partir del elemento navbar*/
+Array.from(document.getElementsByClassName('whoareshow')).forEach(element =>{
+    element.addEventListener('click',()=>{
+        tutorialView();
+    })
+})
+
 
 
