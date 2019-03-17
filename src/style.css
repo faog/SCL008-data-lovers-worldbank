@@ -40,7 +40,7 @@ nav{
 footer{
     background-color:rgba(77, 77, 77);
     padding: 0px 100px;
-    height: 65px;  
+    height: 40px;  
 }
 
 footer p{
@@ -56,8 +56,13 @@ footer p{
 
 .carouselcontent{
     background-color:rgba(77, 77, 77, 0.4);
-    margin: 140px 120px;
-    height: 320px;
+    margin: 120px 120px;
+    height: 300px;
+}
+
+.carousel.carousel-slider{
+    margin-top:25px;
+    height: 90vh;
 }
 
 #welcomeimage h2{   
@@ -75,10 +80,6 @@ footer p{
     font-size: 28px;
     text-align: center;     
     color: #FFFFFF;             
-}
-
-.carousel{
-    height: 90vh;
 }
 
 #onecarousel{
@@ -123,12 +124,21 @@ footer p{
 /*Página de búsqueda de indicadores*/
 main #searchview{
     color:#212F3C;  
-    padding: 200px 100px;
+    padding: 50px 100px;
+    background-color: rgb(236, 239, 241, 0.2);
 }
 
-#worldbankresult{   
-    height: 60vh;
-    padding: 0px 100px; 
+#searchview h3{
+    font-weight: bold;   
+    font-size: 36px;
+    text-transform:uppercase;
+    color:#212F3C;
+}
+
+#searchview p{
+    font-size: 20px;
+    padding-top:10px;
+    padding-bottom:10px;
 }
 
 #searchresult{
@@ -166,12 +176,12 @@ main #searchview{
     }
 
     footer{
-        padding: 0px 100px;
+        padding: px 100px;
         height: 100px;  
     }    
 
     footer p{
-        padding-top: 10px;
+        padding-top: 30px;
         font-size: 26px;
         text-align: left;    
     }
@@ -179,19 +189,16 @@ main #searchview{
 }
 
 @media (max-width: 992px){
-    .carousel{
+    .carousel.carousel-slider{
+        
         height: 95vh;
-    } 
-
+    }
     .carouselcontent{
         margin: 300px 100px;      
         height: 1200px;
     
     }
-    /*.carousel.carousel-slider{
-        height: 1400px;
-    }*/
-    
+       
     main #welcomeimage{        
         background-repeat: no-repeat;
         background-size: 100% 100%;
@@ -207,9 +214,7 @@ main #searchview{
 
     #welcomeimage p{
         padding-top:40px;          
-        font-size: 48px;
-       
-
+        font-size: 48px; 
     }
 
     .btnstart{
@@ -218,4 +223,31 @@ main #searchview{
         font-size: 48px;  
         margin-top:50px;
     }
+}
+
+/*Responsivo Página búsqueda*/
+@media (max-width: 992px){
+    main #searchview{
+        padding: 200px 100px;
+        background-color: rgb(236, 239, 241, 0.2);
+    }
+    
+    #searchview h3{         
+        font-size: 64px;
+    }
+    
+    #searchview p{
+        font-size: 48px;
+       
+    }
+    
+    #sectionfilter{
+        font-size: 26px;
+    }
+
+    #searchresult{
+        margin-top:50px;
+    }
+
+
 }

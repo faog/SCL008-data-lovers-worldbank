@@ -31,7 +31,7 @@ function indexView(){
             <div id="twocarousel" class="carousel-item">
                 <div class="carouselcontent">
                     <h2>Índice de datos</h2>
-                    <p class="white-text">Herramienta de análisis y visualización que contiene información de países latinoamericanos (Brasil, Chile, Mexico y Peru)</p>
+                    <p class="white-text">Herramienta de análisis y visualización que contiene información de países latinoamericanos (Brasil, Chile, México y Perú)</p>
                     <button class="btnstart">Indicadores</button>
                 </div>
             </div>
@@ -86,19 +86,20 @@ function drawChart(indicatorCode,data) {
     chartData.addColumn('string', 'Año');
     chartData.addColumn('number', 'Perú');
     chartData.addColumn('number', 'Brasil');
-    chartData.addColumn('number', 'Mexico');
+    chartData.addColumn('number', 'México');
     chartData.addColumn('number', 'Chile');
 
     chartData.addRows(getIndicator(indicatorCode,data));
 
     let options = {
-        title: document.getElementById("indicatorcode").selectedOptions[0].text,
+        title: "Resultado obtenido: ",
+        subtitle: document.getElementById("indicatorcode").selectedOptions[0].text,
         curveType: 'function',        
         width: '100%',
         height: 500,
         legend:{textStyle: {color: '#212F3C', fontSize: 18}},
         fontSize:20,
-        colors: ['red','green', 'yellow', 'Blue']
+        colors: ['#F44336','#388E3C', '#FFEB3B', '#303F9F']
     };
 
     let chart = new google.charts.Line(document.getElementById('searchresult'));
@@ -124,6 +125,8 @@ function searchView(){
 
     `
     <section id="searchview" class="row"> 
+        <h3>Indicadores</h3>
+        <p>Selecciona el indicador de tu interes, para obtener un gráfico de lineas con la información de los países disponibles.</p>
         <section class="col s12 m12 l12" id="sectionfilter">
             <select id="indicatorcode" class="browser-default">
                 <option value="option">Selecciona una opción</option>
@@ -138,8 +141,7 @@ function searchView(){
         </section>
     </section>  
     `  
-    
- 
+     
     /*III. Filtrar*/
 
     /*a) Filtro por indicador*/    
