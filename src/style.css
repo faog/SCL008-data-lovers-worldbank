@@ -24,7 +24,7 @@ header, footer, main{
 
 /*a) Estilos barra navegación*/
 nav{
-    background-color:rgba(27, 31, 119, 0.95);
+    background:linear-gradient(180deg,#2471A3, #2980B9);
     position: fixed;
     z-index: 100;
     padding: 0px 100px;
@@ -38,7 +38,7 @@ nav{
 
 /*b) Estilos de Footer*/
 footer{
-    background-color:rgba(27, 31, 119, 0.95);
+    background-color:rgba(77, 77, 77);
     padding: 0px 100px;
     height: 65px;  
 }
@@ -59,8 +59,7 @@ main #welcomeimage{
     background-size: cover;
     background-position:center;
     width: 100%;
-    opacity: 0.9;  
-    
+    opacity: 0.9;      
 }
 
 #welcomeimage h2{   
@@ -109,8 +108,8 @@ main #welcomeimage{
 }
 
 .btnstart:hover{
-    background: rgba(27, 31, 119);
-    border: 1px solid rgba(27, 31, 119);     
+    background: #2471A3;
+    border: 1px solid #2471A3;     
     font-weight: bold;  
 }
 

@@ -4,12 +4,13 @@ window.data = {
       return element.indicatorCode === condition;
     })
     return indicators;
-  }/*,
-  sortData: (data, sortBy, sortOrder)=>{
+  },
+  sortData: (data, sortBy)=>{
     let sortedData = data.sort((indicatorA, indicatorB)=>{
       return indicatorA[sortBy].localeCompare(indicatorB[sortBy]);
-    }) 
-  }*/
+    });
+    return sortedData;
+  }
 }
 
 

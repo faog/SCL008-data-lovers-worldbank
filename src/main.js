@@ -105,7 +105,11 @@ function drawChart(indicatorCode,data) {
 function searchView(){
     let options = "";
     
-    data.BRA.indicators.forEach((element)=>{
+    let orderIndicators = [];
+
+    orderIndicators = window.data.sortData(data.BRA.indicators, "indicatorName");
+
+    orderIndicators.forEach((element)=>{
         options +=`<option value="${element.indicatorCode}">${element.indicatorName}</option>`
     })
 
@@ -137,15 +141,7 @@ function searchView(){
         let condition =document.getElementById('indicatorcode').value;
         drawChart(condition, data);
     });
-
-    /*a) Ordenar indicadores   
-    document.getElementById('indicatorcode').addEventListener('DOMContentLoaded',()=>{
-        let sortOrder =document.getElementById('indicatorcode').value;
-        let result = window.data.sortData(data, 'indicatorCode', sortOrder);   
-        searchView(result);
-
-    }); */ 
-    
+   
 }
 
 /*II.Manejo del DOM */
