@@ -1,6 +1,13 @@
 /*global google, WORLDBANK, $*/
 const data=WORLDBANK;
 
+$(document).ready(function(){
+    //Navbar
+    $('.sidenav').sidenav();       
+
+    indexView();
+});
+
 function indexView(){
     document.getElementById('dinamicpage').innerHTML = '';
     document.getElementById('dinamicpage').innerHTML += 
