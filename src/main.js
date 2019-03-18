@@ -55,6 +55,53 @@ function indexView(){
     }) 
 }
 
+/*Pagina funcionamiento*/
+function tutorialView(){
+    document.getElementById('dinamicpage').innerHTML = '';
+    document.getElementById('dinamicpage').innerHTML += 
+
+    `
+    <section id="tutorialview" class="row"> 
+        <h3>Funcionamiento</h3>
+        <p>Página en construcción</p>        
+    </section>  
+    `  
+
+}
+
+/*Pagina Que es indicadores WB*/
+function whoareView(){
+    document.getElementById('dinamicpage').innerHTML = '';
+    document.getElementById('dinamicpage').innerHTML += 
+
+    `
+    <section id="whoareview" class="row"> 
+    <h3>¿Qué es indicadores worldbank?</h3>        
+        <article class="col s12 m12 l8"> 
+            <p>Es una aplicación pensada en aquellas personas que necesitan conocer indicadores  demograficos, económicos y comerciales .</p> 
+        </article> 
+        <picture id="datanotebook" class="col s12 m12 l4">
+            <img src="Image/datapeople.jpg"  alt="notebook con gráficos"/>        
+        </picture>                  
+    </section>  
+
+    <section id="whoareviewtwo" class="row"> 
+        <h3>Indicadores de Latinoamerica</h3>
+        <article class="col s12 m12 l6">
+            <p>Podrás escoger entre 138 indicadores mostrando como resultado un gráfico de lineas comparativo entre los países Brasil, Chile, 
+            México y Perú; siendo amigable para quienes visiten esta aplicación web.</p>
+        </article>
+        <picture class="col s12 m12 l6">
+            <img src="Image/linechart.jpg" id="linechart" alt="ejemplo gráfico"/>        
+        </picture>       
+    </section> 
+
+
+    `  
+
+}
+
+
 function getIndicator(indicatorCode,data){
     let indicatorData=[];
 
@@ -108,7 +155,7 @@ function drawChart(indicatorCode,data) {
 } 
 /*Fin implementación Google Chart*/
 
-
+/*Pagina búsqueda indicadores*/
 function searchView(){
     let options = "";
     
@@ -152,19 +199,6 @@ function searchView(){
    
 }
 
-function tutorialView(){
-    document.getElementById('dinamicpage').innerHTML = '';
-    document.getElementById('dinamicpage').innerHTML += 
-
-    `
-    <section id="tutorialview" class="row"> 
-        <h3>¿Quiénes somos?</h3>
-        <p>Página en construcción</p>        
-    </section>  
-    `  
-
-}
-
 /*II.Manejo del DOM */
 /*a)Inicialización página de inicio*/
 document.addEventListener('DOMContentLoaded', () =>{ 
@@ -184,12 +218,18 @@ Array.from(document.getElementsByClassName('indicatorshow')).forEach(element=>{
     })
 })
 
-/*c)Página "Quienes somos" a partir del elemento navbar*/
-Array.from(document.getElementsByClassName('whoareshow')).forEach(element =>{
+/*c)Página "funcionamiento a partir del elemento navbar*/
+Array.from(document.getElementsByClassName('tutorialshow')).forEach(element =>{
     element.addEventListener('click',()=>{
         tutorialView();
     })
 })
 
+/*c)Página "Qué es indicadores WB" a partir del elemento navbar*/
+Array.from(document.getElementsByClassName('whoareshow')).forEach(element =>{
+    element.addEventListener('click',()=>{
+        whoareView();
+    })
+})
 
 

@@ -147,14 +147,16 @@ main #searchview{
     margin-top:50px;
 }
 
-/*Página de Quienes somos*/
+/*Página funcionamiento*/
 main #tutorialview{
     color:#212F3C;  
-    padding: 50px 100px;
+    padding: 0px 100px;
     background-color: rgb(236, 239, 241, 0.2);
 }
 
 #tutorialview h3{
+    margin-top:0px;
+    padding-top: 100px;
     font-weight: bold;   
     font-size: 36px;
     text-transform:uppercase;
@@ -165,6 +167,68 @@ main #tutorialview{
     font-size: 20px;
     padding-top:10px;
     padding-bottom:10px;
+}
+
+/*Página ¿Qué es indicadores WB*/
+main #whoareview{
+    color:#212F3C;  
+    padding: 100px 100px;
+    background:linear-gradient(180deg,#2471A3, #2980B9);   
+    margin-bottom:0px; 
+}
+
+#whoareview h3{
+    font-weight: bold;   
+    font-size: 32px;
+    text-transform:uppercase;
+    color:white;
+}
+
+#whoareview article {
+    padding: 0px 0px;  
+}
+
+#whoareview article p{
+    font-size: 22px;
+    padding: 10px 0px; 
+    color:white; 
+}
+
+#datanotebook{   
+    text-align: center;    
+}
+#datanotebook img{
+    height: 200px;
+    width: 300px;      
+}
+
+main #whoareviewtwo{
+    margin:0px;
+    color:#212F3C;  
+    padding: 50px 100px;
+    background-color: rgb(236, 239, 241);
+}
+
+#whoareviewtwo h3{
+    font-weight: bold;   
+    font-size: 32px;
+    text-transform:uppercase;
+    color:#212F3C;
+}
+
+#whoareviewtwo article {
+    padding: 0px 0px;  
+}
+
+#whoareviewtwo article p{
+    font-size: 22px;
+    padding: 10px 0px;  
+}
+
+#linechart{
+    height: 300px;
+    width: 100%;
+    
 }
 
 /*RESPONSIVO*/
@@ -271,7 +335,53 @@ main #tutorialview{
 
 }
 
-/*Responsivo Página quienes somos*/
+/*Responsivo Página Qué es indicadores WB*/
+@media (max-width: 992px){
+    main #whoareview{
+        padding: 200px 100px;  
+        padding-bottom:100px;    
+    }
+    
+    #whoareview h3{    
+        padding-top:20px;     
+        font-size: 54px;
+    }
+    
+    #whoareview  article p{
+        font-size: 42px;       
+    }  
+
+    main #whoareviewtwo{
+        padding: 50px 100px;
+        
+    }
+    
+    #whoareviewtwo h3{    
+        padding-top:20px;     
+        font-size: 54px;
+    }
+    
+    #whoareviewtwo  article p{
+        font-size: 48px;       
+    } 
+
+    #datanotebook img{
+        margin-top:50px;
+        height: 350px;
+        width: 500px;      
+    }
+
+    #linechart{
+        padding-top:20px;
+        height: 400px;
+        width: 100%;
+        
+    }
+
+
+}
+
+/*Responsivo Página funcionamiento*/
 @media (max-width: 992px){
     main #tutorialview{
         padding: 200px 100px;
@@ -288,3 +398,11 @@ main #tutorialview{
        
     }  
 }
+
+
+@media (min-width: 992px) and (max-width: 1199.98px){
+    main {
+        flex: 0 0 auto;
+    }
+}
+
