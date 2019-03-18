@@ -60,14 +60,13 @@ footer p{
     height: 300px;
 }
 
-.carousel.carousel-slider{
-    margin-top:25px;
-    height: 90vh;
+.carousel.carousel-slider{  
+    height: 100vh;
 }
 
 #welcomeimage h2{   
     margin-top:0px;
-    padding-top:50px; 
+    padding-top:40px; 
     font-weight: bold;   
     font-size: 36px;
     text-align: center;      
@@ -189,13 +188,12 @@ main #searchview{
 }
 
 @media (max-width: 992px){
-    .carousel.carousel-slider{
-        
+    .carousel.carousel-slider{        
         height: 95vh;
     }
     .carouselcontent{
         margin: 300px 100px;      
-        height: 1200px;
+        height: 1000px;
     
     }
        
@@ -206,7 +204,7 @@ main #searchview{
     }   
     
     #welcomeimage h2 {  
-        padding-top:220px;
+        padding-top:120px;
         font-size: 64px;   
         line-height:100px;     
          
@@ -232,7 +230,8 @@ main #searchview{
         background-color: rgb(236, 239, 241, 0.2);
     }
     
-    #searchview h3{         
+    #searchview h3{    
+        padding-top:20px;     
         font-size: 64px;
     }
     
@@ -242,12 +241,12 @@ main #searchview{
     }
     
     #sectionfilter{
-        font-size: 26px;
+        padding-top:10px;
+        font-size: 30px;
     }
 
     #searchresult{
         margin-top:50px;
     }
-
 
 }
