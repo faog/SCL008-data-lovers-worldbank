@@ -214,6 +214,10 @@ main #tutorialview{
     .carousel.carousel-slider{        
         height: 95vh;
     }
+
+    .carouselcontent{
+        height: 800px;
+    }
        
     main #welcomeimage{        
         background-repeat: no-repeat;
