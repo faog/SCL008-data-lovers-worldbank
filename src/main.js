@@ -152,6 +152,19 @@ function searchView(){
    
 }
 
+function tutorialView(){
+    document.getElementById('dinamicpage').innerHTML = '';
+    document.getElementById('dinamicpage').innerHTML += 
+
+    `
+    <section id="tutorialview" class="row"> 
+        <h3>¿Quiénes somos?</h3>
+        <p>Página en construcción</p>        
+    </section>  
+    `  
+
+}
+
 /*II.Manejo del DOM */
 /*a)Inicialización página de inicio*/
 document.addEventListener('DOMContentLoaded', () =>{ 

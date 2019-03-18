@@ -56,7 +56,10 @@ footer p{
 
 .carouselcontent{
     background-color:rgba(77, 77, 77, 0.4);
-    margin: 120px 120px;
+    margin-left: 120px;
+    margin-right: 120px;    
+    margin-top:50vh;
+    transform: translateY(-50%);
     height: 300px;
 }
 
@@ -144,6 +147,26 @@ main #searchview{
     margin-top:50px;
 }
 
+/*Página de Quienes somos*/
+main #tutorialview{
+    color:#212F3C;  
+    padding: 50px 100px;
+    background-color: rgb(236, 239, 241, 0.2);
+}
+
+#tutorialview h3{
+    font-weight: bold;   
+    font-size: 36px;
+    text-transform:uppercase;
+    color:#212F3C;
+}
+
+#tutorialview p{
+    font-size: 20px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
 /*RESPONSIVO*/
 
 /*Dispositivo Movil (Celular)*/
@@ -191,11 +214,6 @@ main #searchview{
     .carousel.carousel-slider{        
         height: 95vh;
     }
-    .carouselcontent{
-        margin: 300px 100px;      
-        height: 1000px;
-    
-    }
        
     main #welcomeimage{        
         background-repeat: no-repeat;
@@ -204,14 +222,12 @@ main #searchview{
     }   
     
     #welcomeimage h2 {  
-        padding-top:120px;
         font-size: 64px;   
         line-height:100px;     
          
     }
 
-    #welcomeimage p{
-        padding-top:40px;          
+    #welcomeimage p{              
         font-size: 48px; 
     }
 
@@ -223,7 +239,7 @@ main #searchview{
     }
 }
 
-/*Responsivo Página búsqueda*/
+/*Responsivo Página búsqueda indicador*/
 @media (max-width: 992px){
     main #searchview{
         padding: 200px 100px;
@@ -249,4 +265,22 @@ main #searchview{
         margin-top:50px;
     }
 
+}
+
+/*Responsivo Página quienes somos*/
+@media (max-width: 992px){
+    main #tutorialview{
+        padding: 200px 100px;
+        background-color: rgb(236, 239, 241, 0.2);
+    }
+    
+    #tutorialview h3{    
+        padding-top:20px;     
+        font-size: 64px;
+    }
+    
+    #tutorialview p{
+        font-size: 48px;
+       
+    }  
 }
