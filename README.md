@@ -36,7 +36,7 @@ Debido a que en está iteración el objetivo era profundizar sobre lo aprendido 
 
 **Aspectos técnicos**
 
-* Para el desarrollo de estilos de PokeChoose se complementó el trabajo con el uso del framework [Materialize](https://materializecss.com/)
+* Para el desarrollo de estilos de indicadores WorldBank se complementó el trabajo con el uso del framework [Materialize](https://materializecss.com/)
 
 * Se realizó test para comprobar el funcionamiento de la aplicación, logrando los siguientes resultados: 
     - % Statements: 100 ; % Branch: 100 ; % Functions: 100 ; % Lines: 100
