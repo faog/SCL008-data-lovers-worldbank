@@ -62,9 +62,32 @@ function tutorialView(){
 
     `
     <section id="tutorialview" class="row"> 
-        <h3>Funcionamiento</h3>
-        <p>Página en construcción</p>        
-    </section>  
+        <h3>funcionamiento</h3>     
+        <h4>Debes ingresar a la opción "Indicadores" y seguir los siguientes pasos:</h4>
+    </section>
+    <article id="instructionone" class="row">  
+        <h4 class="col s12 m12 l6">Seleccionar el indicador de interés. Tienes 138 distintos para escoger.</h4>
+        <picture class="col s12 m12 l6">
+            <img src="Image/tutorial001.png" id="tutorialsearchone" alt="Página de búsqueda"/>        
+        </picture>
+    </article>
+    <article id="instructiontwo" class="row">              
+        <h4 class="col s12 m12 l6">Automáticamente, obtendras un gráfico de línea con el resultado del indicador que hayas escogido.</h4>
+        <picture class="col s12 m12 l6">
+            <img src="Image/tutorial002.png" id="tutorialsearchtwo" alt="resultado gráfico"/>        
+        </picture>
+    </article>
+
+    <article id="instructionthree" class="row">
+        <h4 class="col s12 m12 l6">Puedes escoger un país y visualizar por año los datos obtenidos.</h4>
+        <picture class="col s12 m12 l6">
+            <img src="Image/tutorial003.png" id="tutorialsearchthree" alt="resaltar país"/>        
+        </picture>
+    </article> 
+
+    <article id="instructionfour" class="row">
+        <h4>¡Y listo! Ahora puedes buscar todos los indicadores y compararlos entre ellos.</h4>    
+    </article>          
     `  
 
 }
@@ -78,7 +101,7 @@ function whoareView(){
     <section id="whoareview" class="row"> 
     <h3>¿Qué es indicadores worldbank?</h3>        
         <article class="col s12 m12 l8"> 
-            <p>Es una aplicación pensada en aquellas personas que necesitan conocer indicadores  demograficos, económicos y comerciales .</p> 
+            <p>Es una aplicación pensada en aquellas personas que necesitan conocer indicadores demográficos, económicos y comerciales.</p> 
         </article> 
         <picture id="datanotebook" class="col s12 m12 l4">
             <img src="Image/datapeople.jpg"  alt="notebook con gráficos"/>        
@@ -88,17 +111,14 @@ function whoareView(){
     <section id="whoareviewtwo" class="row"> 
         <h3>Indicadores de Latinoamerica</h3>
         <article class="col s12 m12 l6">
-            <p>Podrás escoger entre 138 indicadores mostrando como resultado un gráfico de lineas comparativo entre los países Brasil, Chile, 
-            México y Perú; siendo amigable para quienes visiten esta aplicación web.</p>
+            <p>Podrás escoger entre 138 indicadores mostrando como resultado un gráfico de líneas; comparativo entre Brasil, Chile, 
+            México y Perú; amigable para quienes visiten la aplicación web.</p>
         </article>
         <picture class="col s12 m12 l6">
             <img src="Image/linechart.jpg" id="linechart" alt="ejemplo gráfico"/>        
         </picture>       
     </section> 
-
-
     `  
-
 }
 
 
@@ -173,7 +193,7 @@ function searchView(){
     `
     <section id="searchview" class="row"> 
         <h3>Indicadores</h3>
-        <p>Selecciona el indicador de tu interes, para obtener un gráfico de lineas con la información de los países disponibles.</p>
+        <p>Selecciona el indicador de tu interés, para obtener un gráfico de lineas con la información de los países disponibles.</p>
         <section class="col s12 m12 l12" id="sectionfilter">
             <select id="indicatorcode" class="browser-default">
                 <option value="option">Selecciona una opción</option>

@@ -147,28 +147,6 @@ main #searchview{
     margin-top:50px;
 }
 
-/*Página funcionamiento*/
-main #tutorialview{
-    color:#212F3C;  
-    padding: 0px 100px;
-    background-color: rgb(236, 239, 241, 0.2);
-}
-
-#tutorialview h3{
-    margin-top:0px;
-    padding-top: 100px;
-    font-weight: bold;   
-    font-size: 36px;
-    text-transform:uppercase;
-    color:#212F3C;
-}
-
-#tutorialview p{
-    font-size: 20px;
-    padding-top:10px;
-    padding-bottom:10px;
-}
-
 /*Página ¿Qué es indicadores WB*/
 main #whoareview{
     color:#212F3C;  
@@ -229,6 +207,103 @@ main #whoareviewtwo{
     height: 300px;
     width: 100%;
     
+}
+
+
+/*Pagina funcionamiento*/
+
+main #tutorialview{
+    color:#212F3C;  
+    padding: 100px 100px;
+    background-color: #EBF5FB;
+    margin-bottom: 0px; 
+}
+
+#tutorialview h3{
+    margin-top:0px;
+    font-weight: bold;   
+    font-size: 32px;
+    text-transform:uppercase;
+    color:#212F3C;
+}
+
+#tutorialview h4{
+    font-size: 22px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+#instructionone{
+    background-color: #EBF5FB; 
+    height:350px;
+    padding-left:100px; 
+    padding-right:100px;
+    margin-bottom: 0px;
+    
+}
+
+#instructionone picture, #instructiontwo picture, #instructionthree picture, #instructionfour picture {
+    text-align:center;
+}
+
+#instructionone h4{
+    margin-top: 100px;
+    font-size:22px;
+    line-height:40px; 
+ 
+}
+
+#instructiontwo{
+    background-color: #D6EAF8; 
+    height:340px;
+    padding-left:100px;
+    padding-right:100px;
+    margin-bottom: 0px;
+}
+
+#instructiontwo h4{
+    margin-top: 100px;
+    font-size:22px;
+    line-height:40px; 
+ 
+}
+
+#instructionthree{
+    background-color: #EBF5FB; 
+    height:340px;
+    padding-left:100px;
+    padding-right:100px;
+    margin-bottom: 0px;
+}
+
+#instructionthree h4{
+    margin-top: 100px;
+    font-size:22px;
+    line-height:40px;  
+}
+
+#instructionfour{
+    background-color: #D6EAF8; 
+    height:150px;
+    padding-left:100px;
+    padding-right:100px;
+    margin-bottom: 0px;
+}
+
+#instructionfour h4{
+    margin-top:0px;
+    margin-bottom:0px;
+    padding-top: 20px;
+    font-size:22px;
+    line-height:40px;
+    margin-right: 35px; 
+}
+
+#tutorialsearchone,#tutorialsearchtwo,#tutorialsearchthree {
+    height: 300px;
+    width: 100%;
+    padding-top:30px;
+    text-align:center;
 }
 
 /*RESPONSIVO*/
@@ -383,22 +458,81 @@ main #whoareviewtwo{
 
 /*Responsivo Página funcionamiento*/
 @media (max-width: 992px){
-    main #tutorialview{
-        padding: 200px 100px;
-        background-color: rgb(236, 239, 241, 0.2);
+
+    main #tutorialview{        
+        padding-top: 120px;        
     }
     
-    #tutorialview h3{    
-        padding-top:20px;     
+    #tutorialview h3{
+        padding-top: 100px;          
         font-size: 64px;
+       
     }
     
-    #tutorialview p{
-        font-size: 48px;
-       
+    #tutorialview h4{
+        font-size: 48px; 
+    }
+
+    #instructionone h4{
+        margin-top:10px;
+        font-size:48px;
+        text-align:left;     
+        line-height:70px;
+    }
+
+    #instructionone{
+        height:700px;
+    }
+
+    #instructiontwo, #instructionthree{
+        height:800px;
+    }
+    
+    #instructiontwo h4{
+        margin-top: 40px;
+        font-size:48px;
+        text-align:left;     
+        line-height:70px;
+    }
+     
+    #instructionthree h4{
+        margin-top: 40px;
+        font-size:48px;
+        text-align:left;     
+        line-height:70px;
+    }
+
+    #instructionfour{
+        height:650px;
+        margin-bottom: 0px;
+        margin-top:0px;
+    }
+    
+    #instructionfour h4{
+        padding-top: 50px;
+        font-size:48px;
+        text-align:left;     
+        line-height:70px;
+        margin-right:35px;
+    }
+
+    #instructionfour{
+        height:300px;
+    }
+
+    
+    #tutorialsearchone, #tutorialsearchtwo, #tutorialsearchthree {
+        margin-left:5px;
+        margin-right:30px;
+        height: 500px;
+        width: 760px;
     }  
+   
 }
 
+
+
+/*Responsivo Ipad pro*/
 
 @media (min-width: 992px) and (max-width: 1199.98px){
     main {
